@@ -17,14 +17,30 @@ namespace TASurvey.Services
             _context = context;
         }
 
-        public Task<Question> CreateQuestion(Question prmQuestion)
-        {
-            throw new NotImplementedException();
+        public async Task<Question> CreateQuestion(Question prmQuestion)
+        {         
+            try
+            {
+                _context.Questions.Add(prmQuestion);
+                return prmQuestion;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
-        public Task<bool> DeleteQuestion(Question )
+        public async Task<bool> DeleteQuestion(Question prmQuestion)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Questions.Remove(prmQuestion);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public Task<List<Question>> GetQuestions()
@@ -32,9 +48,17 @@ namespace TASurvey.Services
             return _context.Questions.ToListAsync();
         }
 
-        public Task<Question> setQuestion(Question prmQuestion)
+        public async Task<Question> setQuestion(Question prmQuestion)
         {
-            throw new NotImplementedException();
+            try
+            {
+                _context.Questions.Update(prmQuestion);
+                return prmQuestion;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

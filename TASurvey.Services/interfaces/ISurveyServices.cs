@@ -11,6 +11,6 @@ namespace TASurvey.Services.interfaces
         Task<List<Question>> GetQuestions();
         Task<Question> setQuestion(Question prmQuestion);
         Task<Question> CreateQuestion(Question prmQuestion);
-        Task<bool> DeleteQuestion(Question);
+        Task<bool> DeleteQuestion(Question prmQuestion);
     }
 }
