@@ -16,9 +16,25 @@ namespace TASurvey.Services
         {
             _context = context;
         }
+
+        public Task<Question> CreateQuestion(Question prmQuestion)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<bool> DeleteQuestion(Question )
+        {
+            throw new NotImplementedException();
+        }
+
         public Task<List<Question>> GetQuestions()
         {
             return _context.Questions.ToListAsync();
+        }
+
+        public Task<Question> setQuestion(Question prmQuestion)
+        {
+            throw new NotImplementedException();
         }
     }
 }
