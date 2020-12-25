@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TASurvey.Helpers;
 using TASurvey.model.Models;
 using TASurvey.Services.interfaces;
 
@@ -14,9 +15,12 @@ namespace TASurvey.Controllers
     public class SurveysController : ControllerBase
     {
         public readonly ISurveysServices surveyServices;
-        public SurveysController(ISurveysServices prmSurveyServices)
+        private readonly ILogger _logger;
+
+        public SurveysController(ISurveysServices prmSurveyServices, ILogger<ResponsesController> logger)
         {
             surveyServices = prmSurveyServices;
+            _logger = logger;
         }
 
         #region CRUD question
@@ -45,6 +49,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {               
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }            
         }
@@ -60,6 +65,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -75,6 +81,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -106,6 +113,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -121,6 +129,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -136,6 +145,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -161,6 +171,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -176,6 +187,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }
@@ -191,6 +203,7 @@ namespace TASurvey.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
                 return BadRequest(ex.ToString());
             }
         }

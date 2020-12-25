@@ -23,7 +23,6 @@ namespace TASurvey.Services.interfaces
 
         //question_order
         Task<List<QuestionOrder>> GetQuestionOrders();
-        Task<QuestionOrder> GetQuestionOrderByID(int QuestionOrderID);
         Task<QuestionOrder> SetQuestionOrder(QuestionOrder prmQuestionOrder);
         Task<QuestionOrder> CreateQuestionOrder(QuestionOrder prmQuestionOrder);
         Task<bool> DeleteQuestionOrder(QuestionOrder prmQuestionOrder);       

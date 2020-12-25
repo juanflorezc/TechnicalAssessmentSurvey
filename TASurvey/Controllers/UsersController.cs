@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using TASurvey.Helpers;
 using TASurvey.model.Models;
 using TASurvey.Services.interfaces;
 
@@ -14,9 +15,11 @@ namespace TASurvey.Controllers
     public class UsersController : ControllerBase
     {
         public readonly IUsersServices usersServices;
-        public UsersController(IUsersServices prmUsersServices)
+        private readonly ILogger _logger;
+        public UsersController(IUsersServices prmUsersServices, ILogger<ResponsesController> logger)
         {
             usersServices = prmUsersServices;
+            _logger = logger;
         }
         #region CRUD Respondent
         [HttpGet]
@@ -35,23 +38,50 @@ namespace TASurvey.Controllers
 
         [HttpPost]
         [Route("Respondent")]
-        public Task<List<Respondent>> CreateRespondents()
+        public async Task<IActionResult> CreateRespondents(Respondent prmRespondent)
         {
-            return usersServices.GetRespondents();
+            try
+            {
+                var response = await usersServices.CreateRespondent(prmRespondent);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
+                return BadRequest(ex.ToString());
+            }
         }
 
         [HttpPut]
         [Route("Respondent")]
-        public Task<List<Respondent>> UpdateRespondents()
+        public async Task<IActionResult> UpdateRespondents(Respondent prmRespondent)
         {
-            return usersServices.GetRespondents();
+            try
+            {
+                var response = await usersServices.SetRespondent(prmRespondent);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
+                return BadRequest(ex.ToString());
+            }
         }
 
         [HttpDelete]
         [Route("Respondent")]
-        public Task<List<Respondent>> DeleteRespondents()
+        public async Task<IActionResult> DeleteRespondents(Respondent prmRespondent)
         {
-            return usersServices.GetRespondents();
+            try
+            {
+                var response = await usersServices.DeleteRespondent(prmRespondent);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(LogEvents.ExeptionError, ex, "Error Exception");
+                return BadRequest(ex.ToString());
+            }
         }
         #endregion
     }

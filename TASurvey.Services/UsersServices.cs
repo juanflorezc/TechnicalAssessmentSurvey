@@ -33,9 +33,9 @@ namespace TASurvey.Services
         /// </summary>
         /// <returns>respondent</returns>
 
-       public async Task<Respondent> GetRespondentByID(int RespondentID)
+       public async Task<Respondent> GetRespondentByID(int prmRespondentID)
         {
-            throw new NotImplementedException();
+            return _context.Respondents.Find(prmRespondentID);
         }
 
        public async Task<Respondent> SetRespondent(Respondent prmRespondent)

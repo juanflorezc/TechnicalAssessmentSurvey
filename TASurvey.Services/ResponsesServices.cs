@@ -26,10 +26,7 @@ namespace TASurvey.Services
             return _context.Responses.ToList();
         }
 
-        public async Task<Response> GetResponseByID(int prmResponseID)
-        {
-            return _context.Responses.Find(prmResponseID);
-        }
+      
 
         public async Task<Response> SetResponse(Response prmResponse)
         {
@@ -79,11 +76,6 @@ namespace TASurvey.Services
         public async Task<List<SurveyResponse>> GetSurveyResponses()
         {
             return _context.SurveyResponses.ToList();
-        }
-
-        public async Task<SurveyResponse> GetSurveyResponseByID(int prmSurveyResponseID)
-        {
-            return _context.SurveyResponses.Find(prmSurveyResponseID);
         }
 
         public async Task<SurveyResponse> SetSurveyResponse(SurveyResponse prmSurveyResponse)
