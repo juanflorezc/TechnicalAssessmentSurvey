@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -146,6 +147,13 @@ namespace TASurvey.Services
         {
             return _context.QuestionOrders.ToList();
         }
+
+        public async Task<List<QuestionOrder>> ReorderQuestionOrder(int prmQuestionID, int prmPosition)
+        {
+            return _context.QuestionOrders.FromSqlRaw($"EXEC [dbo].[proc_setreOrder] {0},{1}",prmQuestionID,prmPosition).ToList();
+        }
+
+
         #endregion
 
         #region survey
@@ -203,8 +211,9 @@ namespace TASurvey.Services
             return _context.Surveys.ToList();
         }
 
+        
         #endregion
 
-       
+
     }
 }

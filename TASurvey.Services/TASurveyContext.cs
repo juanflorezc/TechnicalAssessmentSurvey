@@ -21,9 +21,10 @@ namespace TASurvey.model.Models
         public virtual DbSet<QuestionOrder> QuestionOrders { get; set; }
         public virtual DbSet<Respondent> Respondents { get; set; }
         public virtual DbSet<Response> Responses { get; set; }
+        public virtual DbSet<Response1> Responses1 { get; set; }
         public virtual DbSet<Survey> Surveys { get; set; }
         public virtual DbSet<SurveyResponse> SurveyResponses { get; set; }
-       
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -134,6 +135,33 @@ namespace TASurvey.model.Models
                     .HasForeignKey(d => d.SurveyResponseId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_response_survey_response_1");
+            });
+
+            modelBuilder.Entity<Response1>(entity =>
+            {
+                entity.HasNoKey();
+
+                entity.ToView("responses");
+
+                entity.Property(e => e.Answer)
+                    .IsRequired()
+                    .HasMaxLength(100)
+                    .HasColumnName("answer");
+
+                entity.Property(e => e.Question)
+                    .IsRequired()
+                    .HasMaxLength(200)
+                    .HasColumnName("question");
+
+                entity.Property(e => e.Respondent)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("respondent");
+
+                entity.Property(e => e.Survey)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .HasColumnName("survey");
             });
 
             modelBuilder.Entity<Survey>(entity =>

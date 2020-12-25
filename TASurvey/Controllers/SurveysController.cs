@@ -24,6 +24,10 @@ namespace TASurvey.Controllers
         }
 
         #region CRUD question
+        /// <summary>
+        /// list the questions
+        /// </summary>        
+        /// <returns>list of questions</returns>
         [HttpGet]
         [Route("Question")]
         public Task<List<Question>> GetQuestions()
@@ -31,6 +35,11 @@ namespace TASurvey.Controllers
             return surveyServices.GetQuestions();
         }
 
+        /// <summary>
+        /// Get a question by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>question</returns>
         [HttpGet]
         [Route("QuestionByID/{id}")]
         public Task<Question> GetQuestions(int id)
@@ -38,6 +47,11 @@ namespace TASurvey.Controllers
             return surveyServices.GetQuestionByID(id);
         }
 
+        /// <summary>
+        /// create a question
+        /// </summary>
+        /// <param name="prmQuestion"></param>
+        /// <returns>question created</returns>
         [HttpPost]
         [Route("Question")]
         public async Task<IActionResult> CreateQuestions(Question prmQuestion)
@@ -54,6 +68,11 @@ namespace TASurvey.Controllers
             }            
         }
 
+        /// <summary>
+        /// update a question
+        /// </summary>
+        /// <param name="prmQuestion"></param>
+        /// <returns>question updated</returns>
         [HttpPut]
         [Route("Question")]
         public async Task<IActionResult> UpdateQuestions(Question prmQuestion)
@@ -70,6 +89,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// delete a question
+        /// </summary>
+        /// <param name="prmQuestion"></param>
+        /// <returns>true if is sucessfull</returns>
         [HttpDelete]
         [Route("Question")]
         public async Task<IActionResult> DeleteQuestions(Question prmQuestion)
@@ -87,7 +111,12 @@ namespace TASurvey.Controllers
         }
         #endregion
 
+
         #region CRUD survey
+        /// <summary>
+        /// list surveys
+        /// </summary>
+        /// <returns>list</returns>
         [HttpGet]
         [Route("Survey")]
         public Task<List<Survey>> GetSurveys()
@@ -95,6 +124,11 @@ namespace TASurvey.Controllers
             return surveyServices.GetSurveys();
         }
 
+        /// <summary>
+        /// get a survey by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>survey</returns>
         [HttpGet]
         [Route("SurveyByID/{id}")]
         public Task<Survey> GetSurveys(int id)
@@ -102,6 +136,11 @@ namespace TASurvey.Controllers
             return surveyServices.GetSurveyByID(id);
         }
 
+        /// <summary>
+        /// create a survey
+        /// </summary>
+        /// <param name="prmSurvey"></param>
+        /// <returns>survey created</returns>
         [HttpPost]
         [Route("Survey")]
         public async Task<IActionResult> CreateSurveys(Survey prmSurvey)
@@ -118,6 +157,12 @@ namespace TASurvey.Controllers
             }
         }
 
+
+        /// <summary>
+        /// update survey
+        /// </summary>
+        /// <param name="prmSurvey"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("Survey")]
         public async Task<IActionResult> UpdateSurveys(Survey prmSurvey)
@@ -134,6 +179,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// delete a survey
+        /// </summary>
+        /// <param name="prmSurvey"></param>
+        /// <returns>true if is successfull</returns>
         [HttpDelete]
         [Route("Survey")]
         public async Task<IActionResult> DeleteSurveys(Survey prmSurvey)
@@ -152,6 +202,10 @@ namespace TASurvey.Controllers
         #endregion
 
         #region Question_order
+        /// <summary>
+        /// get a list of question_order
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("QuestionOrder")]
         public Task<List<QuestionOrder>> GetQuestionOrders()
@@ -159,7 +213,24 @@ namespace TASurvey.Controllers
             return surveyServices.GetQuestionOrders();
         }
 
-        
+        /// <summary>
+        /// method to reorder the questions
+        /// </summary>
+        /// <param name="questionid"></param>
+        /// <param name="order"></param>
+        /// <returns>list of questionsorder</returns>
+        [HttpPost]
+        [Route("ReorderQuestionOrder/{questionid}/{order}")]
+        public Task<List<QuestionOrder>> GetQuestionOrders(int questionid,int order)
+        {
+            return surveyServices.ReorderQuestionOrder(questionid,order);
+        }
+
+        /// <summary>
+        /// create question order
+        /// </summary>
+        /// <param name="prmQuestionOrder"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("QuestionOrder")]
         public async Task<IActionResult> CreateQuestionOrders(QuestionOrder prmQuestionOrder)
@@ -176,6 +247,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// update question_order
+        /// </summary>
+        /// <param name="prmQuestionOrder"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("QuestionOrder")]
         public async Task<IActionResult> UpdateQuestionOrders(QuestionOrder prmQuestionOrder)
@@ -192,6 +268,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// delete a question
+        /// </summary>
+        /// <param name="prmQuestionOrder"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("QuestionOrder")]
         public async Task<IActionResult> DeleteQuestionOrders(QuestionOrder prmQuestionOrder)

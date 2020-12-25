@@ -13,6 +13,7 @@ namespace TASurvey.Services.interfaces
         Task<Response> SetResponse(Response prmResponse);
         Task<Response> CreateResponse(Response prmResponse);
         Task<bool> DeleteResponse(Response prmResponse);
+        Task<List<Response1>> GetResponsesAll();
 
         //survey_response
         Task<List<SurveyResponse>> GetSurveyResponses();
@@ -20,5 +21,6 @@ namespace TASurvey.Services.interfaces
         Task<SurveyResponse> CreateSurveyResponse(SurveyResponse prmSurveyResponse);
         Task<bool> DeleteSurveyResponse(SurveyResponse prmSurveyResponse);
 
+        
     }
 }

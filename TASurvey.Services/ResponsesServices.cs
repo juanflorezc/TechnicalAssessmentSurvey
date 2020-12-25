@@ -120,6 +120,15 @@ namespace TASurvey.Services
             }
         }
 
+        /// <summary>
+        /// Return all responses, this is a view
+        /// </summary>
+        /// <returns>list of responses</returns>
+        public async Task<List<Response1>> GetResponsesAll()
+        {
+            return _context.Responses1.ToList();
+        }
+
         #endregion
 
     }

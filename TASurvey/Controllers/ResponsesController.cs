@@ -23,6 +23,10 @@ namespace TASurvey.Controllers
         }
 
         #region CRUD survey_response
+        /// <summary>
+        /// get a lists of survey ersponse
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("SurveyResponse")]
         public Task<List<SurveyResponse>> GetSurveyResponses()
@@ -30,7 +34,11 @@ namespace TASurvey.Controllers
             return responsesServices.GetSurveyResponses();
         }
 
-
+        /// <summary>
+        /// create a survey response
+        /// </summary>
+        /// <param name="prmSurveyResponse"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("SurveyResponse")]
         public async Task<IActionResult> CreateSurveyResponses(SurveyResponse prmSurveyResponse)
@@ -47,6 +55,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// update a survey response
+        /// </summary>
+        /// <param name="prmSurveyResponse"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("SurveyResponse")]
         public async Task<IActionResult> UpdateSurveyResponses(SurveyResponse prmSurveyResponse)
@@ -63,6 +76,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// delete a survey_response
+        /// </summary>
+        /// <param name="prmSurveyResponse"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("SurveyResponse")]
         public async Task<IActionResult> DeleteSurveyResponses(SurveyResponse prmSurveyResponse)
@@ -81,6 +99,10 @@ namespace TASurvey.Controllers
         #endregion
 
         #region CRUD response
+        /// <summary>
+        /// get a list of responses
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("Response")]
         public Task<List<Response>> GetResponses()
@@ -88,7 +110,22 @@ namespace TASurvey.Controllers
             return responsesServices.GetResponses();
         }
 
+        /// <summary>
+        /// get a pretty list or response, its a view
+        /// </summary>
+        /// <returns>view of responses</returns>
+        [HttpGet]
+        [Route("ResponsesAll")]
+        public Task<List<Response1>> GetResponsesAll()
+        {
+            return responsesServices.GetResponsesAll();
+        }
 
+        /// <summary>
+        /// create a response
+        /// </summary>
+        /// <param name="prmResponse"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Response")]
         public async Task<IActionResult> CreateResponses(Response prmResponse)
@@ -105,6 +142,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// update a response
+        /// </summary>
+        /// <param name="prmResponse"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("Response")]
         public async Task<IActionResult> UpdateResponses(Response prmResponse)
@@ -121,6 +163,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// delete a response
+        /// </summary>
+        /// <param name="prmResponse"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("Response")]
         public async Task<IActionResult> DeleteResponses(Response prmResponse)

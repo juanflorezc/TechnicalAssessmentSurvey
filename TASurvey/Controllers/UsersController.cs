@@ -22,6 +22,10 @@ namespace TASurvey.Controllers
             _logger = logger;
         }
         #region CRUD Respondent
+        /// <summary>
+        /// get a list of respondents
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         [Route("Respondent")]
         public Task<List<Respondent>> GetRespondents()
@@ -29,6 +33,11 @@ namespace TASurvey.Controllers
             return usersServices.GetRespondents();
         }
 
+        /// <summary>
+        /// get a respondend by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("RespondentById/{id}")]
         public Task<Respondent> GetRespondents(int id)
@@ -36,6 +45,11 @@ namespace TASurvey.Controllers
             return usersServices.GetRespondentByID(id);
         }
 
+        /// <summary>
+        /// create a respondend
+        /// </summary>
+        /// <param name="prmRespondent"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Respondent")]
         public async Task<IActionResult> CreateRespondents(Respondent prmRespondent)
@@ -52,6 +66,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// update a respondendt
+        /// </summary>
+        /// <param name="prmRespondent"></param>
+        /// <returns></returns>
         [HttpPut]
         [Route("Respondent")]
         public async Task<IActionResult> UpdateRespondents(Respondent prmRespondent)
@@ -68,6 +87,11 @@ namespace TASurvey.Controllers
             }
         }
 
+        /// <summary>
+        /// dete a respondent
+        /// </summary>
+        /// <param name="prmRespondent"></param>
+        /// <returns></returns>
         [HttpDelete]
         [Route("Respondent")]
         public async Task<IActionResult> DeleteRespondents(Respondent prmRespondent)
