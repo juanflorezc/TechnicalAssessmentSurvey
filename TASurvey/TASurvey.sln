@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASurvey.api", "TASurvey.ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASurvey.model", "..\TASurvey.model\TASurvey.model.csproj", "{B6C7CD7D-ED06-4067-AAA6-DC35FA049624}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASurvey.Services", "..\TASurvey.Services\TASurvey.Services.csproj", "{F7041EF7-F0BB-4735-8195-64E971167154}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TASurvey.services", "..\TASurvey.Services\TASurvey.services.csproj", "{F7041EF7-F0BB-4735-8195-64E971167154}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

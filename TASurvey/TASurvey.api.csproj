@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TASurvey.Services\TASurvey.Services.csproj" />
+    <ProjectReference Include="..\TASurvey.Services\TASurvey.services.csproj" />
   </ItemGroup>
 
 

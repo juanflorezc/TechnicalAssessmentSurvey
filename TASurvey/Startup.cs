@@ -98,9 +98,10 @@ namespace TASurvey
         {
             services.AddDbContext<model.Models.TASurveyContext>(options
               => options.UseSqlServer(Configuration.GetConnectionString("TASurveyDatabase")));
-
-            //Agregar Interfaces y clases
-            services.AddTransient<ISurveyServices, SurveyServices>();
+            
+            services.AddTransient<ISurveysServices, SurveysServices>();
+            services.AddTransient<IResponsesServices, ResponsesServices>();
+            services.AddTransient<IUsersServices, UsersServices>();
 
         }
     }
