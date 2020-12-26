@@ -28,6 +28,11 @@ Technical Assessment Survey API, project kanban (https://github.com/juanflorezc/
   "TASurveyDatabase": "Server=xxxxx;Database=xxxxx;User ID=xxxxx;Password=xxxx;MultipleActiveResultSets=False;Connection Timeout=30;"
   modify all xxxx with real information of the database created on second point and conection 
 6. Run the project
+
+# to test
+  you can use the next postman collection
+  https://www.getpostman.com/collections/f583bdc7a5500e852f51
+  there is all the definition request.
  
  # Architectur
  
@@ -44,3 +49,4 @@ I used dependency injection like a desing pattern and a layer desing architectur
 
 # Missing points and enhancement opportunities.
 I did all the CRUD events but, on my experience, it's a good idea use delete logic, is just a field that control the state of the register (is_deleted for example)
+
