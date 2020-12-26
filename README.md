@@ -29,7 +29,7 @@ Technical Assessment Survey API, project kanban (https://github.com/juanflorezc/
   modify all xxxx with real information of the database created on second point and conection 
 6. Run the project
 
-# to test
+# To test
   you can use the next postman collection
   https://www.getpostman.com/collections/f583bdc7a5500e852f51
   there is all the definition request.
