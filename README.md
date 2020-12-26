@@ -33,6 +33,8 @@ Technical Assessment Survey API, project kanban (https://github.com/juanflorezc/
   you can use the next postman collection
   https://www.getpostman.com/collections/f583bdc7a5500e852f51
   there is all the definition request.
+  (File - Import , select link and paste the link)
+  
  
  # Architectur
  
