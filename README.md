@@ -1,5 +1,5 @@
 # TechnicalAssessmentSurvey
-Technical Assessment Survey API
+Technical Assessment Survey API, project kanban (https://github.com/juanflorezc/TechnicalAssessmentSurvey/projects/1)
 
 # Functional requirements Maded:
 •	Each table have a CRUD implementation.
