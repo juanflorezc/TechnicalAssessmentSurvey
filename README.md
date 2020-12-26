@@ -19,7 +19,7 @@ Technical Assessment Survey API, project kanban (https://github.com/juanflorezc/
 •	Entity Framework Core (with Scaffold-DbContext).
 •	Unit testing.
 
-# instruccions to execution
+# Instruccions to execution
 1. Dowload the file https://github.com/juanflorezc/TechnicalAssessmentSurvey/blob/main/TASurvey_structure.sql
 2. Create a new database over a MS SQL Server 
 3. Execute the file dowloaded on the first point over the database created on second point
@@ -29,7 +29,7 @@ Technical Assessment Survey API, project kanban (https://github.com/juanflorezc/
   modify all xxxx with real information of the database created on second point and conection 
 6. Run the project
  
- # architectur
+ # Architectur
  
 The solution consists of 3 projects and a NUNIT project for unit tests.
 
